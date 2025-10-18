@@ -62,6 +62,14 @@ body{
     justify-content: center;
     align-items: center;
     flex:1;
+    margin-top: 10px;
+}
+.contenedorCuenta{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex:1;
 }
 .etiquetaTexto{
     display: flex;

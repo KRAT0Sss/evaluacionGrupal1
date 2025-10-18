@@ -7,7 +7,12 @@ cargar=function(){
     mostrarComponente("divTransacciones");
     ocultarComponente("divCuentas");
     ocultarComponente("divMovimientos");
-    
+    deshabilitarComponente("botonMovimientos");
+    deshabilitarComponente("botonTransacciones");
+    deshabilitarComponente("botonCuentas");
+    deshabilitarComponente("txtValor");
+    deshabilitarComponente("botonDepositar");
+    deshabilitarComponente("botonRetirar");
 }
 
 /*
@@ -15,13 +20,27 @@ cargar=function(){
     si existe retorna el objeto cuenta, caso contrario retorna null. 
 */
 buscarCuenta=function(numeroCuenta){
-
+    let elementoCuentas;
+    for(i=0;i<cuentas.length;i++){
+        elementoCuentas=cuentas[i];
+        if(numeroCuenta == elementoCuentas.numeroCuenta){
+            return elementoCuentas;
+        }
+    }
+    return null
 }
 
 ejecutarBusqueda=function(){
-    //toma el numero de cuenta de la caja de texto
-    //invoca a buscarCuenta y guarda el resultado en una variable
-    //Si el resultado es diferente de null, muestra en pantalla, caso contrario muestra un alert
+    let cuentaRecuperada = recuperarTexto("txtCuenta"); //toma el numero de cuenta de la caja de texto
+    let resultado = buscarCuenta(cuentaRecuperada); //invoca a buscarCuenta y guarda el resultado en una variable
+    if(resultado != null){  //Si el resultado es diferente de null, muestra en pantalla, caso contrario muestra un alert
+        mostrarTexto("lblCuenta", resultado.nombre +" "+resultado.apellido+"\nC.I: "+ resultado.cedula + '\nCuenta: '+resultado.numeroCuenta+"\nSaldo: "+resultado.saldo);
+        habilitarComponente("botonDepositar");
+        habilitarComponente("botonRetirar");  
+        habilitarComponente("txtValor");      
+    }else{
+        alert("Cuenta Inexistente");
+    }
 }
 
 depositar=function(numeroCuenta,monto){
