@@ -64,5 +64,9 @@ retirar=function(numeroCuenta,monto){
     }else{ //Si el saldo no es suficiente, muestra un alert SALDO INSUFICIENTE
         alert("SALDO INSUFICIENTE!");
     }
-   
+}
+ejecutarRetiro=function(){
+    let numeroCuenta = recuperarTexto('txtCuenta'); //Toma el numero de cuenta ingresado en la caja de texto
+    let monto = recuperarFloat('txtValor'); //Toma el monto ingresado en la caja de texto
+    retirar(numeroCuenta, monto); //invoca a retirar
 }
