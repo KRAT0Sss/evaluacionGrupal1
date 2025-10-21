@@ -7,12 +7,13 @@ cargar=function(){
     mostrarComponente("divTransacciones");
     ocultarComponente("divCuentas");
     ocultarComponente("divMovimientos");
-    deshabilitarComponente("botonMovimientos");
-    deshabilitarComponente("botonTransacciones");
-    deshabilitarComponente("botonCuentas");
     deshabilitarComponente("txtValor");
     deshabilitarComponente("botonDepositar");
     deshabilitarComponente("botonRetirar");
+    mostrarTexto('lblValor', "");
+    mostrarTextoEnCaja("txtValor", "");
+    mostrarTexto('lblCuenta', "");
+    mostrarTextoEnCaja("txtCuenta", "");
 }
 
 /*
