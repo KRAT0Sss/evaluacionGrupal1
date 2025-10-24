@@ -51,7 +51,7 @@ mostrarCuentas=function(){
     }
     tabla+="</table>";
     cmpTabla.innerHTML=tabla;
-}
+} 
 
 /*
     Busca la cuenta en el arreglo en función del número de cuenta,
@@ -106,6 +106,13 @@ agregar=function(){
 // fin cuentas
 
 //inicio movimientos
+
+consultarMovimientos = function () {
+    let numeroCuenta = recuperarTexto("txtNumeroCuenta");
+    filtrarMovimientos(numeroCuenta);
+}
+
+
 filtrarMovimientos = function (numeroCuenta) {
     let movimientosCuenta = [];
     //Se barre el arreglo de movimientos
@@ -129,7 +136,7 @@ mostrarMovimientos = function (misMovimientos) {
     let tabla = ` 
     <table>
         <thead>
-            <tr><td>N° CUENTA</td>
+            <tr><td>NUMERO CUENTA</td>
             <td>MONTO</td>
             <td>TIPO</td></tr>
         </thead>

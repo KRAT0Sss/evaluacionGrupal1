@@ -1,6 +1,7 @@
-body{
-   
+body {
+    background-color: #f0f0f0; 
 }
+
 .principal{
     display: flex;
     
@@ -100,4 +101,14 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 6px;
+    text-align: center;
 }
